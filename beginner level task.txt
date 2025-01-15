@@ -1,3 +1,5 @@
+         1 VARIABLE
+
 1. Variable pi and Checking its Data Type
 
 # Create a variable named pi
@@ -7,6 +9,17 @@ pi = 22 / 7
 print("Value of pi:", pi)
 print("Data type of pi:", type(pi))
 
+Output:
+
+Value of pi: 3.142857142857143
+
+Data type of pi: <class 'float'>
+
+
+Explanation: Since 22 / 7 results in division, the value is stored as a floating-point number (float).
+
+---
+
 2. Variable Named for
 
 # Try to create a variable called 'for'
@@ -14,7 +27,7 @@ for = 4
 
 What Happens?
 
-You will get a SyntaxError: invalid syntax.
+It will get a SyntaxError: invalid syntax.
 
 
 Reason:
@@ -27,6 +40,9 @@ To resolve this, use a different name, such as:
 # Use a valid variable name
 for_value = 4
 print(for_value)
+
+
+---
 
 3. Calculate Simple Interest
 
@@ -41,3 +57,441 @@ SI = (P * R * T) / 100
 # Print the result
 print("Simple Interest:", SI)
 
+Output:
+
+Simple Interest: 1500.0
+
+
+Explanation: The formula SI = (P * R * T) / 100 calculates the interest based on the given inputs.
+
+---
+
+         2  NUMBER
+ 
+1. Use the format Function
+
+# Function to format a string
+def format_string(number, char):
+    formatted = "The number is {} and the character is '{}'.".format(number, char)
+    return formatted
+
+# Call the function with arguments 145 and 'o'
+result = format_string(145, 'o')
+print(result)
+
+Output:
+
+The number is 145 and the character is 'o'.
+
+Representation Used:
+The format function inserts the provided arguments into the string placeholders ({}) in the given order.
+
+
+---
+
+2. Calculate the Area of the Pond and Total Water
+
+# Given values
+radius = 84  # in meters
+pi = 3.14
+water_per_sqm = 1.4  # liters per square meter
+
+# Calculate the area of the pond
+area = pi * (radius ** 2)
+
+# Calculate the total water in the pond
+total_water = int(area * water_per_sqm)  # Convert to integer to remove decimals
+
+# Print the results
+print("Area of the pond:", int(area))  # Area without decimals
+print("Total water in the pond:", total_water, "liters")
+
+Output:
+
+Area of the pond: 22167
+Total water in the pond: 31033 liters
+
+---
+
+       3 LIST
+
+# Initial list of Justice League members
+justice_league = ["Superman", "Batman", "Wonder Woman", "Flash", "Aquaman", "Green Lantern"]
+
+# Task 1: Calculate the number of members
+num_members = len(justice_league)
+print("Number of members in the Justice League:", num_members)
+
+# Task 2: Add Batgirl and Nightwing
+justice_league.extend(["Batgirl", "Nightwing"])
+print("After adding new members:", justice_league)
+
+# Task 3: Move Wonder Woman to the beginning
+justice_league.remove("Wonder Woman")
+justice_league.insert(0, "Wonder Woman")
+print("After making Wonder Woman the leader:", justice_league)
+
+# Task 4: Separate Aquaman and Flash by moving Superman in between
+justice_league.remove("Superman")
+flash_index = justice_league.index("Flash")
+justice_league.insert(flash_index, "Superman")
+print("After separating Aquaman and Flash:", justice_league)
+
+# Task 5: Replace the list with a new team
+justice_league = ["Cyborg", "Shazam", "Hawkgirl", "Martian Manhunter", "Green Arrow"]
+print("After assembling a new team:", justice_league)
+
+# Task 6: Sort the Justice League alphabetically
+justice_league.sort()
+print("After sorting alphabetically:", justice_league)
+print("New leader:", justice_league[0])
+3. Calculate Speed
+
+# Given values
+distance = 490  # meters
+time = 7 * 60  # Convert minutes to seconds
+
+# Calculate speed
+speed = int(distance / time)  # Convert to integer to remove decimals
+
+# Print the result
+print("Speed:", speed, "meters per second")
+
+Output:
+
+Speed: 1 meters per second
+
+---
+   
+       4  IF CONDITION
+
+1. BMI Category Program
+
+# Ask user for height and weight
+height = float(input("Enter height in meters: "))
+weight = float(input("Enter weight in kilograms: "))
+
+# Calculate BMI
+bmi = weight / (height ** 2)
+
+# Determine BMI category
+if bmi >= 30:
+    category = "Obesity"
+elif 25 <= bmi < 30:
+    category = "Overweight"
+elif 18.5 <= bmi < 25:
+    category = "Normal"
+else:
+    category = "Underweight"
+
+# Print the result
+print(f"Your BMI is {bmi:.2f}, which falls under the category: {category}")
+
+
+---
+
+2. City to Country Program
+
+# Define cities by country
+countries = {
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
+    "UAE": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+    "India": ["Mumbai", "Bangalore", "Chennai", "Delhi"]
+}
+
+# Ask the user to enter a city name
+city = input("Enter a city name: ").strip()
+
+# Find the corresponding country
+found = False
+for country, cities in countries.items():
+    if city in cities:
+        print(f"{city} is in {country}")
+        found = True
+        break
+
+if not found:
+    print(f"Sorry, I don't know which country {city} belongs to.")
+
+
+---
+
+Example Outputs
+
+BMI Category Program:
+
+Input:
+
+Enter height in meters: 1.75  
+Enter weight in kilograms: 70
+
+Output:
+
+Your BMI is 22.86, which falls under the category: Normal
+
+
+---
+
+City to Country Program:
+
+Input:
+
+Enter a city name: Abu Dhabi
+
+Output:
+
+Abu Dhabi is in UAE
+
+Let me know if you need any modifications!
+[12:40 pm, 15/1/2025] Heena😌: Program to Check if Two Cities Belong to the Same Country
+
+# Define cities by country
+countries = {
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
+    "UAE": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+    "India": ["Mumbai", "Bangalore", "Chennai", "Delhi"]
+}
+
+# Ask the user to enter two cities
+city1 = input("Enter the first city: ").strip()
+city2 = input("Enter the second city: ").strip()
+
+# Determine if both cities belong to the same country
+country1 = None
+country2 = None
+
+for country, cities in countries.items():
+    if city1 in cities:
+        country1 = country
+    if city2 in cities:
+        country2 = country
+
+# Print the result
+if country1 and country2:
+    if country1 == country2:
+        print(f"Both cities are in {country1}")
+    else:
+        print("They don't belong to the same country")
+else:
+    if not country1 and not country2:
+        print(f"Both {city1} and {city2} are not in the list")
+    elif not country1:
+        print(f"{city1} is not in the list")
+    elif not country2:
+        print(f"{city2} is not in the list")
+
+
+---
+
+Example Outputs
+
+Example 1:
+
+Input:
+
+Enter the first city: Mumbai  
+Enter the second city: Chennai
+
+Output:
+
+Both cities are in India
+
+Example 2:
+
+Input:
+
+Enter the first city: Sydney  
+Enter the second city: Dubai
+
+Output:
+
+They don't belong to the same country
+
+Example 3:
+
+Input:
+
+Enter the first city: London  
+Enter the second city: Paris
+
+Output:
+
+Both London and Paris are not in the list
+
+
+---
+   
+        4 IF CONDITION(CONTINUED.....)
+
+Program to Check if Two Cities Belong to the Same Country
+
+# Define cities by country
+countries = {
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
+    "UAE": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+    "India": ["Mumbai", "Bangalore", "Chennai", "Delhi"]
+}
+
+# Ask the user to enter two cities
+city1 = input("Enter the first city: ").strip()
+city2 = input("Enter the second city: ").strip()
+
+# Determine if both cities belong to the same country
+country1 = None
+country2 = None
+
+for country, cities in countries.items():
+    if city1 in cities:
+        country1 = country
+    if city2 in cities:
+        country2 = country
+
+# Print the result
+if country1 and country2:
+    if country1 == country2:
+        print(f"Both cities are in {country1}")
+    else:
+        print("They don't belong to the same country")
+else:
+    if not country1 and not country2:
+        print(f"Both {city1} and {city2} are not in the list")
+    elif not country1:
+        print(f"{city1} is not in the list")
+    elif not country2:
+        print(f"{city2} is not in the list")
+
+
+---
+
+Example Outputs
+
+Example 1:
+
+Input:
+
+Enter the first city: Mumbai  
+Enter the second city: Chennai
+
+Output:
+
+Both cities are in India
+
+Example 2:
+
+Input:
+
+Enter the first city: Sydney  
+Enter the second city: Dubai
+
+Output:
+
+They don't belong to the same country
+
+Example 3:
+
+Input:
+
+Enter the first city: London  
+Enter the second city: Paris
+
+Output:
+
+Both London and Paris are not in the list
+
+
+---
+
+           5 FOR LOOP
+
+1. Simulate Rolling a Six-Sided Die
+
+import random
+
+# Variables to track statistics
+rolls = 20
+count_6 = 0
+count_1 = 0
+consecutive_6 = 0
+previous_roll = None
+
+# Simulate rolling a die
+for _ in range(rolls):
+    roll = random.randint(1, 6)
+    if roll == 6:
+        count_6 += 1
+        if previous_roll == 6:
+            consecutive_6 += 1
+    if roll == 1:
+        count_1 += 1
+    previous_roll = roll
+
+# Print statistics
+print(f"Total rolls: {rolls}")
+print(f"Number of times 6 was rolled: {count_6}")
+print(f"Number of times 1 was rolled: {count_1}")
+print(f"Number of times two 6s were rolled in a row: {consecutive_6}")
+
+
+---
+
+2. Jumping Jacks Workout Routine
+
+# Total jumping jacks to complete
+total_jumping_jacks = 100
+set_size = 10
+
+# Track completed sets
+completed_jumping_jacks = 0
+
+while completed_jumping_jacks < total_jumping_jacks:
+    # Perform a set
+    completed_jumping_jacks += set_size
+    print(f"You completed {completed_jumping_jacks} jumping jacks.")
+    
+    if completed_jumping_jacks < total_jumping_jacks:
+        tired = input("Are you tired? (yes/no): ").strip().lower()
+        
+        if tired in ["yes", "y"]:
+            skip = input("Do you want to skip the remaining sets? (yes/no): ").strip().lower()
+            if skip in ["yes", "y"]:
+                break
+            else:
+                remaining = total_jumping_jacks - completed_jumping_jacks
+                print(f"{remaining} jumping jacks remaining.")
+        elif tired in ["no", "n"]:
+            remaining = total_jumping_jacks - completed_jumping_jacks
+            print(f"{remaining} jumping jacks remaining.")
+    else:
+        print("Congratulations! You completed the workout.")
+        break
+
+# Print total jumping jacks completed
+print(f"You completed a total of {completed_jumping_jacks} jumping jacks.")
+
+
+---
+
+Example Outputs
+
+Dice Rolling Program:
+
+Total rolls: 20
+Number of times 6 was rolled: 5
+Number of times 1 was rolled: 3
+Number of times two 6s were rolled in a row: 1
+
+Jumping Jacks Program (Sample Interaction):
+
+Input:
+
+Are you tired? no  
+Are you tired? yes  
+Do you want to skip the remaining sets? yes
+
+Output:
+
+You completed 30 jumping jacks.
+You completed a total of 30 jumping jacks.
+
+
+---

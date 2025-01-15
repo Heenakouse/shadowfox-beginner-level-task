@@ -242,9 +242,6 @@ Output:
 
 Abu Dhabi is in UAE
 
-Let me know if you need any modifications!
-[12:40 pm, 15/1/2025] Heena😌: Program to Check if Two Cities Belong to the Same Country
-
 # Define cities by country
 countries = {
     "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth"],
